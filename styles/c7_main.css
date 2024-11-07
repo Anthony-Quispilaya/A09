@@ -18,15 +18,16 @@ a:focus, a:hover {
 	font-style: italic;
 }
 /* the styles for the nav */
-#nav_menu ul{
+#nav_menu ul {
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
+	position: relative;
 }
-#nav_menu ul li{
+#nav_menu ul li {
 	float: left;
 }
-#nav_menu ul li a{
+#nav_menu ul li a {
 	display: block;
 	width: 160px;
 	text-align: center;
@@ -36,8 +37,24 @@ a:focus, a:hover {
 	color: white;
 	font-weight: bold;
 }
-#nav_menu a.current{
+#nav_menu a.current {
 	color: yellow;
+}
+#nav_menu ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+}
+#nav_menu ul ul li {
+	float: none;
+}
+#nav_menu ul li:hover > ul {
+	display: block;
+}
+#nav_menu > ul::after {
+    content: "";
+    clear: both;
+    display: block;
 }
 /* the styles for the header */
 header {
@@ -96,7 +113,9 @@ section ul {
 section li {
 	padding-bottom: .35em;
 }
-
+section ul li {
+	list-style-type: circle;
+}
 /* the styles for the article */
 article {
 	padding: .5em 0;
